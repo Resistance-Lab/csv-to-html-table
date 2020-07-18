@@ -36,8 +36,11 @@
 
 
     <script type="text/javascript">
+      base_url = "https://data.resistancelab.network";
+      path = new URL(document.URL).hash.substr(1);
+      csv_path = base_url + path;
       CsvToHtmlTable.init({
-        csv_path: new URL(document.URL).hash.substr(1),
+        csv_path: csv_path,
         element: 'table-container', 
         allow_download: true,
         csv_options: {separator: ',', delimiter: '"'},
